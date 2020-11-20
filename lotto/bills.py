@@ -1,8 +1,8 @@
 from random import randrange
 # Import methods from other files
-from city import City
-from type_of_bill import TypeBill
-from prints import PrintTickets
+from lotto.city import City
+from lotto.type_of_bill import TypeBill
+from lotto.prints import PrintTickets
 
 class Lotto(object):
 
