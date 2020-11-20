@@ -7,7 +7,7 @@ In order to do this, the user will be required:
 - the city of extraction _(napoli, firenze, bari, cagliari, venezia, milano, roma, genova, palermo o torino)_;
 - the type of bet _(ambata, ambo, terno, quaterna or cinquina)_;
 - the amount of numbers to be placed (between 1 and 10), then the program will generate sequences of random numbers between 1 and 90. The choice of numbers must be consistent with the bet chosen.
-For example, if the user bets ***terno***, he cannot choose less than 3 numbers.gchf
+For example, if the user bets ***terno***, he cannot choose less than 3 numbers.
 #### Example of ticket's design: :
 An example of a ticket will be presented below showing:   
 _Napoli_ (city), _terno_ (bet) and four random numbers.
