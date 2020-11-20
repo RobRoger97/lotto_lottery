@@ -9,24 +9,24 @@ In order to do this, the user will be required:
 - the amount of numbers to be placed (between 1 and 10), then the program will generate sequences of random numbers between 1 and 90. The choice of numbers must be consistent with the bet chosen.
 For example, if the user bets ***terno***, he cannot choose less than 3 numbers.
 
-#### Example of a visual representation
+#### Example of a visual representation:
 An example of a ticket will be presented below showing:   
 _Napoli_ (city), _terno_ (bet) and four random numbers.
 
-+------------------------------------+
-|        *_-_LOTTO TICKET_-_*        |
-+====================================+
-|                                    |
-|            CITY: Napoli            |
-|                                    |
-|             BET: terno             |
-|                                    |
-+====================================+
-|            34 25 59 13             |
-|                                    |
-+------------------------------------+
+>+------------------------------------+  
+>|        *_-_LOTTO TICKET_-_*        |  
+>+====================================+  
+>|                                    |  
+>|            CITY: Napoli            |  
+>|                                    |  
+>|             BET: terno             |  
+>|                                    |  
+>+====================================+  
+>|            34 25 59 13             |  
+>|                                    |  
+>+------------------------------------+  
 
-### How to launch the program:
+### How to launch the program
 The entry point lotto_game.py script can be launched through command line by specifying the amount of tickets to generate for the n argument.  
 For example, writing ***lotto_game.py 5*** will generate a bill of _five_ tickets.  
 After launching the script, the program will start constructing each ticket by asking the user all the information about each ticket.
