@@ -4,4 +4,6 @@ It will be divided into three levels:
 - Lotto ticket generator
 - Lotto fake extraction
 - Lotto calculate prizes
+
+# INFO
 For more info on the rules visit: https://www.sisal.it/lotto/come-si-gioca
