@@ -13,7 +13,7 @@ An example of a ticket will be presented below showing:
 _Napoli_ (city), _terno_ (bet) and four random numbers.
 
 ```+------------------------------------+```  
-```|        *_-_LOTTO TICKET_-_*        |```  
+```|&emsp;&emsp;*_-_LOTTO TICKET_-_*&emsp;&emsp;|```  
 ```+====================================+```  
 ```|                                    |```  
 ```|            CITY: Napoli            |```  
