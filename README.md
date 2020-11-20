@@ -13,18 +13,18 @@ For example, if the user bets ***terno***, he cannot choose less than 3 numbers.
 An example of a ticket will be presented below showing:   
 _Napoli_ (city), _terno_ (bet) and four random numbers.
 
->+------------------------------------+  
->|        *_-_LOTTO TICKET_-_*        |  
->+====================================+  
->|                                    |  
->|            CITY: Napoli            |  
->|                                    |  
->|             BET: terno             |  
->|                                    |  
->+====================================+  
->|            34 25 59 13             |  
->|                                    |  
->+------------------------------------+  
++------------------------------------+  
+|        *_-_LOTTO TICKET_-_*        |  
++====================================+  
+|                                    |  
+|            CITY: Napoli            |  
+|                                    |  
+|             BET: terno             |  
+|                                    |  
++====================================+  
+|            34 25 59 13             |  
+|                                    |  
++------------------------------------+  
 
 ### How to launch the program
 The entry point lotto_game.py script can be launched through command line by specifying the amount of tickets to generate for the n argument.  
