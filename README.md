@@ -8,7 +8,7 @@ In order to do this, the user will be required:
 - the type of bet _(ambata, ambo, terno, quaterna or cinquina)_;
 - the amount of numbers to be placed (between 1 and 10), then the program will generate sequences of random numbers between 1 and 90. The choice of numbers must be consistent with the bet chosen.
 For example, if the user bets ***terno***, he cannot choose less than 3 numbers.gchf
-#### Example of a visual representation:
+#### Example of ticket's design: :
 An example of a ticket will be presented below showing:   
 _Napoli_ (city), _terno_ (bet) and four random numbers.
 
@@ -16,9 +16,9 @@ _Napoli_ (city), _terno_ (bet) and four random numbers.
 ```|```&emsp;&emsp;&emsp;```*_-_LOTTO TICKET_-_*```&emsp;&emsp;&emsp;```|```  
 ```+====================================+```  
 ```|```&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;```|```  
-```|```&emsp;&emsp;&emsp;&emsp;&emsp;```CITY:  Napoli```&emsp;&emsp;&emsp;&emsp;&ensp;```|```  
+```|```&emsp;&emsp;&emsp;&emsp;&emsp;```CITY :  Napoli```&emsp;&emsp;&emsp;&emsp;&ensp;```|```  
 ```|```&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;```|```  
-```|```&emsp;&emsp;&emsp;&emsp;&emsp;```BET:  terno```&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;```|```  
+```|```&emsp;&emsp;&emsp;&emsp;&emsp;```BET :  terno```&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;```|```  
 ```|```&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;```|```  
 ```+====================================+```  
 ```|```&emsp;&emsp;&emsp;&emsp;&emsp;```34 25 59 13```&emsp;&emsp;&emsp;&emsp;&emsp;```|```  
