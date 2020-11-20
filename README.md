@@ -16,7 +16,7 @@ _Napoli_ (city), _terno_ (bet) and four random numbers.
 ```|```&emsp;&emsp;&emsp;```*_-_LOTTO TICKET_-_*```&emsp;&emsp;&emsp;```|```  
 ```+====================================+```  
 ```|```&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;```|```  
-```|```&emsp;&emsp;&emsp;&emsp;&emsp;```CITY :  Napoli```&emsp;&emsp;&emsp;&ensp;&emsp;```|```  
+```|```&emsp;&emsp;&emsp;&emsp;&ensp;```CITY :  Napoli```&emsp;&emsp;&emsp;&ensp;&emsp;```|```  
 ```|```&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;```|```  
 ```|```&emsp;&emsp;&emsp;&emsp;&emsp;```BET :  terno```&emsp;&emsp;&emsp;&ensp;&ensp;&emsp;```|```  
 ```|```&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;```|```  
