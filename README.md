@@ -16,14 +16,14 @@ _Napoli_ (city), _terno_ (bet) and four random numbers.
 ```|```&emsp;&emsp;&emsp;```*_-_LOTTO TICKET_-_*```&emsp;&emsp;&emsp;```|```  
 ```+====================================+```  
 ```|```&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;```|```  
-```|            CITY: Napoli            |```  
-```|                                    |```  
-```|             BET: terno             |```  
-```|                                    |```  
+```|```&emsp;&emsp;&emsp;```CITY: Napoli```&emsp;&emsp;&emsp;```|```  
+```|```&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;```|```  
+```|```&emsp;&emsp;&emsp;```BET: terno```&emsp;&emsp;&emsp;```|```  
+```|```&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;```|```  
 ```+====================================+```  
-```|            34 25 59 13             |```  
-```|                                    |```  
-```|                                    |```  
+```|```&emsp;&emsp;&emsp;```34 25 59 13```&emsp;&emsp;&emsp;```|```  
+```|```&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;```|```  
+```|```&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;```|```  
 ```+------------------------------------+```  
 
 ### How to launch the program
