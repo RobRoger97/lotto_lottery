@@ -1,5 +1,5 @@
 from random import randrange
-
+# Import methods from other files
 from city import City
 from type_of_bill import TypeBill
 from prints import PrintTickets
@@ -12,28 +12,30 @@ class Lotto(object):
         - city (string)
         - bet  (string)
         - num  (list of random number)
-        - ticket_amount (da vedere)
+        - ticket_amount (int)
     """
     def __init__(self, city ='', bet ='',num =[], ticket_amount=0):
         self.city = city
         self.bet = bet
         self.num = num
         self.int_bet = 0
-        
+        # Call the method that checks the validity of the ticket_amount
         if Lotto.is_ticket_amount_valid(ticket_amount):
             self.ticket_amount = ticket_amount
         else:
             pass
     
-
+    # Method in which the user is asked to enter the number 
+    # of random numbers to play
     @staticmethod
     def number_user(self):
-        max_num = 10
+        max_num = 10 # Maximum number to respect
 
         while True:            
             amount = input("How many numbers? \n \
                         Enter a number from 1 to 10\n \
                         ---> ")
+            # Case in which the user does not enter a number           
             if amount.isdigit()== False:
                 print("This is not a number!")
                 print("Please, try again...")
@@ -42,7 +44,9 @@ class Lotto(object):
                 if int(amount) >= self.int_bet and int(amount) <= 10:
                     self.num = Lotto.random_numbers(int(amount))
                     break
-                elif int(amount) < self.int_bet:
+                # If it is a number, we have to handle the errors 
+                # in this case as well
+                elif int(amount) < self.int_bet: # The type of bill must also be considered
                     print("The number entered is too low")
                     print("Please, try again...")
                     print()
@@ -53,14 +57,14 @@ class Lotto(object):
                     print()
                 
 
-
+    # Method in which the user is asked to enter the city
     @staticmethod
     def city_user(self):
         PrintTickets.horizontal_line()
         txt = "Choose one of the next cities"
         PrintTickets.central(txt)
         PrintTickets.horizontal_under()
-
+        # Creates a list of cities to observe from for the user can choose
         for x,name in enumerate(City.cities_list,1):
             print(" -%2.0f"%(x), "-->", name)
         
@@ -68,45 +72,46 @@ class Lotto(object):
 
         while True:
             user_city = input("Enter the name of the city: ")
-
+            # The method is called to verify that the city is valid
             if City.is_city_valid(user_city):
                 c = City(user_city)
                 self.city = c.city
-                print(self.city)
                 break
-            elif user_city.isdigit():
+            elif user_city.isdigit(): # Case in which the user enter a number
                 print("Enter the name of the city,\n "\
                     "not the number!")
                 print("Please, try again...")
                 print()
+
+    # Method in which the user is asked to enter the type of bill
     @staticmethod            
     def type_user(self):
         PrintTickets.horizontal_line()
         txt = "Choose one of the next type of bill:"
         PrintTickets.central(txt)
         PrintTickets.horizontal_under()
-
+         # Creates a list of type to observe from for the user can choose
         for x,name in enumerate(TypeBill.types_list,0):
             print(" -%2.0f"%(x), "-->", name)
         PrintTickets.horizontal_line()
 
         while True:
             user_type = input("Enter the type of bill: ")
-
+            # The method is called to verify that the type is valid
             if TypeBill.is_bill_valid(user_type): 
                 b = TypeBill(user_type)
                 self.int_bet = b.min_num
                 self.bet = b.bill_type
-                print( self.int_bet, 'and', self.bet)
+                
                 break
-            elif user_type.isdigit():
+            elif user_type.isdigit(): # Case in which the user enter a number
                 print("Enter the type of bill,\n" \
                     "not the number!")
                 print("Please, try again...")
                 print()
 
-    
-
+    # Method that takes the number entered by the user as an argument 
+    # and creates lists of random numbers
     @staticmethod
     def random_numbers(number_amount):
         num_list = []
@@ -114,22 +119,29 @@ class Lotto(object):
             num = randrange(1,90+1)
 
             while True:
-                if num in num_list:
+                if num in num_list: # If the number exists, repeat..
                     num = randrange(1,90+1)
                 else:
                     break
             num_list.append(num)
         return num_list
 
+    # Check that the number of tickets entered is valid
     @staticmethod
     def is_ticket_amount_valid(ticket_amount):
         if ticket_amount >= 1 and ticket_amount <=5:
             return True
         else:
             return False
+
+    #method that uses the previous methods to print 1 to n tickets 
+    # requested by the user        
     @staticmethod
     def print_ticket(self,ticket_amount):
+        # Dictionary containing all cities, bet types and numbers 
+        # entered by the user
         dic = {'city' : [], 'bet' : [], 'num' : []}
+        # Recall of methods for each ticket
         for t in range(ticket_amount):
             print()
             print(f"TICKET {t+1}:")
@@ -140,7 +152,8 @@ class Lotto(object):
             dic['bet'].append(self.bet)
             Lotto.number_user(self)
             dic['num'].append(self.num)
-        print(dic)
+        
+        # Printing of individual tickets
         for t in range(ticket_amount):    
             cit = dic['city']
             type_bill = dic['bet']
