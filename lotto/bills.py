@@ -41,7 +41,7 @@ class Lotto(object):
                 print("Please, try again...")
                 print()
             else:
-                if int(amount) >= self.int_bet and int(amount) <= 10:
+                if int(amount) >= self.int_bet and int(amount) <= max_num:
                     self.num = Lotto.random_numbers(int(amount))
                     break
                 # If it is a number, we have to handle the errors 
@@ -66,7 +66,7 @@ class Lotto(object):
         PrintTickets.horizontal_under()
         # Creates a list of cities to observe from for the user can choose
         for x,name in enumerate(City.cities_list,1):
-            print(" -%2.0f"%(x), "-->", name)
+            print("%2.0f)"%(x), " ", name)
         
         PrintTickets.horizontal_line()
 
@@ -92,7 +92,8 @@ class Lotto(object):
         PrintTickets.horizontal_under()
          # Creates a list of type to observe from for the user can choose
         for x,name in enumerate(TypeBill.types_list,0):
-            print(" -%2.0f"%(x), "-->", name)
+            if name!=None:
+                print("%2.0f)"%(x), " ", name)
         PrintTickets.horizontal_line()
 
         while True:
