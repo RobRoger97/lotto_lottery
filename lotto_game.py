@@ -11,6 +11,7 @@ def main():
   tickets_num = args.n
 
   while True:
+    tickets_list = []
     # Case where zero entered --> exit
     if tickets_num == 0:
         PrintTickets.horizontal_line()
@@ -24,6 +25,7 @@ def main():
         ticket = Lotto()
         ticket.ticket_amount = tickets_num
         ticket.print_ticket(ticket,args.n)
+
         print()
         PrintTickets.horizontal_line()
         print("            !!ATTENTION!!\n       Do you want to continue?")
@@ -43,6 +45,7 @@ def main():
         tickets_num = int(input("- Yes ---> Enter a number between 1 and 5 \n" \
                    "-  No ---> Enter 0 to quit: \n"\
                    "Enter here: "))
+
 
     
 
