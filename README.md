@@ -12,19 +12,20 @@ For example, if the user bets ***terno***, he cannot choose less than 3 numbers.
 An example of a ticket will be presented below showing:   
 _Napoli_ (city), _terno_ (bet) and four random numbers.
 
-```+------------------------------------+```  
-```|```&emsp;&emsp;&emsp;```*_-_LOTTO TICKET_-_*```&emsp;&emsp;&emsp;```|```  
-```+====================================+```  
-```|```&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;```|```  
-```|```&emsp;&emsp;&emsp;&emsp;&ensp;```CITY :  Napoli```&emsp;&emsp;&emsp;&ensp;&emsp;```|```  
-```|```&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;```|```  
-```|```&emsp;&emsp;&emsp;&emsp;&emsp;```BET :  terno```&emsp;&emsp;&emsp;&ensp;&ensp;&emsp;```|```  
-```|```&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;```|```  
-```+====================================+```  
-```|```&emsp;&emsp;&emsp;&emsp;&emsp;```34 25 59 13```&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;```|```  
-```|```&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;```|```  
-```|```&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;```|```  
-```+------------------------------------+```  
+```
++------------------------------------+
+|        *_-_LOTTO TICKET_-_*        |
++====================================+
+|                                    |
+|            CITY: Napoli            |
+|                                    |
+|             BET: terno             |
+|                                    |
++====================================+
+|            34 58 56 21             |
+|                                    |
++------------------------------------+
+```  
 
 ### How to launch the program
 The entry point lotto_game.py script can be launched through command line by specifying the amount of tickets to generate for the n argument.  
