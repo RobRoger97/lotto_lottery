@@ -3,6 +3,7 @@ from random import randrange
 from lotto.city import City
 from lotto.type_of_bill import TypeBill
 from lotto.prints import PrintTickets
+from lotto.extraction import Extraction
 
 class Lotto(object):
 
@@ -19,6 +20,7 @@ class Lotto(object):
         self.bet = bet
         self.num = num
         self.int_bet = 0
+        win_num = []
         # Call the method that checks the validity of the ticket_amount
         if Lotto.is_ticket_amount_valid(ticket_amount):
             self.ticket_amount = ticket_amount
@@ -27,7 +29,6 @@ class Lotto(object):
     
     # Method in which the user is asked to enter the number 
     # of random numbers to play
-    @staticmethod
     def number_user(self):
         max_num = 10 # Maximum number to respect
 
@@ -58,7 +59,6 @@ class Lotto(object):
                 
 
     # Method in which the user is asked to enter the city
-    @staticmethod
     def city_user(self):
         PrintTickets.horizontal_line()
         txt = "Choose one of the next cities"
@@ -83,8 +83,7 @@ class Lotto(object):
                 print("Please, try again...")
                 print()
 
-    # Method in which the user is asked to enter the type of bill
-    @staticmethod            
+    # Method in which the user is asked to enter the type of bill           
     def type_user(self):
         PrintTickets.horizontal_line()
         txt = "Choose one of the next type of bill:"
@@ -141,7 +140,7 @@ class Lotto(object):
     def print_ticket(self,ticket_amount):
         # Dictionary containing all cities, bet types and numbers 
         # entered by the user
-        dic = {'city' : [], 'bet' : [], 'num' : []}
+        dic = {'city' : [], 'bet' : [], 'num' : [], 'int_bet': []}
         # Recall of methods for each ticket
         for t in range(ticket_amount):
             print()
@@ -151,17 +150,41 @@ class Lotto(object):
             dic['city'].append(self.city)
             Lotto.type_user(self)
             dic['bet'].append(self.bet)
+            dic['int_bet'].append(self.int_bet)
             Lotto.number_user(self)
             dic['num'].append(self.num)
-        
+        extr = Extraction()
+        extr.print_extraction()
         # Printing of individual tickets
         for t in range(ticket_amount):    
             cit = dic['city']
             type_bill = dic['bet']
             num = dic['num']
+            int_b = dic['int_bet']
             PrintTickets.table(cit[t],type_bill[t],num[t])
+            # Verify the winnings
+            self.win_num = extr.is_winner(cit[t],num[t])
+            # The number of numbers must be greater than the bet value
+            if len(self.win_num) >= int_b[t]:
+                    PrintTickets.horizontal_line()
+                    PrintTickets.central("!!YOUR TICKET IS A WINNER!!")
+                    PrintTickets.horizontal_under()
+                    PrintTickets.central("RUOTA {}".format(cit[t]))
+                    PrintTickets.central("With {} on the numbers:".format(type_bill[t]))
+                    # Turn numbers into a string, separated by spaces
+                    string = " ".join([str(y) for y in self.win_num])
+                    PrintTickets.central(f"{string}")
+                    PrintTickets.horizontal_under()
+                    
+            else:   # If the ticket is not winning
+                    PrintTickets.horizontal_line()
+                    PrintTickets.central("!!IT WILL BE FOR THE NEXT ONE!!")
+                    PrintTickets.horizontal_under()
+                    PrintTickets.central("The ticket isn't winning...")
+                    PrintTickets.horizontal_under()
+                    pass
 
-
+   
 if __name__ == '__main__':
     ex = Lotto()
     ex.print_ticket(ex,3)
