@@ -49,13 +49,13 @@ class Extraction(object):
                 for n in numbers:
                     if n in value:
                         win_num.append(n)
-                return win_num
+                        return win_num
             # Special case in which the user enters "Tutte"
             elif city == "Tutte":
                 for n in numbers:
                     if n in value:
                         win_num.append(n)
-                return win_num
+                        return win_num
             else:
                 pass
             
@@ -77,5 +77,3 @@ class Extraction(object):
 if __name__ == '__main__':
     test = Extraction()
     test.print_extraction()
-    lis = [1,2,3,5,7,10,4,6,12,24]
-    test.is_winner('Tutte',lis,'ambata',1)
