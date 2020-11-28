@@ -97,4 +97,4 @@ It is characterized by the presence of files such as:
 - ***city.py*** : it represents the chosen city for a specific ticket;
 - ***prints.py*** : it prints the ticket taking into account the locations of cities, bets and numbers;
 - ***bills.py*** : it manages the logic of the program. It contains the lot class which takes into account the inputs and then enriches the ticket through the print file;
--***extraction.py***: it manages the 5 random numbers to be assigned to the cities and then prints the table of extractions.
+- ***extraction.py***: it manages the 5 random numbers to be assigned to the cities and then prints the table of extractions.
