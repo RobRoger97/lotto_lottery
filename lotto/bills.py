@@ -20,7 +20,7 @@ class Lotto(object):
         self.bet = bet
         self.num = num
         self.int_bet = 0
-        win_num = []
+        self.win_num = []
         # Call the method that checks the validity of the ticket_amount
         if Lotto.is_ticket_amount_valid(ticket_amount):
             self.ticket_amount = ticket_amount
