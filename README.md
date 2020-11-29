@@ -1,9 +1,13 @@
 # Learning path:
-## Level 2 : _Lotto Fake Extractions_
+## Level 3 : _Lotto calculate prizes_
 ### Introduction
-In the second level, a table of the numbers drawn for each city is generated. 
-It is checked whether the ticket or tickets chosen are winning or not. 
-- a ticket results in ***winning*** when there is a least amount of matching numbers between the ticket's numbers and the numbers extracted in its city (for a bet on _Tutte_, namely all cities, the ticket's numbers will be checked against each city's extraction one by one). The least amount of matching numbers corresponds to the minumum amount of numbers to play for a specific bet type.
+In the third level, the user is asked for a price to bet (ranging from 1€ to 200€).  
+If the ticket is successful, based on a certain combination, number and bet, the price will be calculated with a certain algorithm. If the winnings exceed 500€, a certain tax (8%) will be calculated to be subtracted.  
+The maximum payout for a ticket is 6,000,000€.
+For more info on the rules visit: 
+- https://www.sisal.it/lotto/come-si-gioca ;
+- https://www.estrazionedellotto.it/prontuario-vincite-lotto .
+
 
 #### Example of table's design:
 The extraction's table shows the current date and 5 random numbers for each city.
@@ -30,59 +34,39 @@ The extraction's table shows the current date and 5 random numbers for each city
 
 #### Example of winner ticket's design: 
 An example of a ticket will be presented below showing:   
-_Napoli_ (city), _ambata_ (bet) and a random number.
+_Tutte_ (all cities), _ambata_ (bet) and a random number.
 
 ```
 +------------------------------------+
 |        *_-_LOTTO TICKET_-_*        |
 +====================================+
 |                                    |
-|            CITY: Napoli            |
-|                                    |
+|            CITY: Tutte             |
 |            BET: ambata             |
+|           AMOUNT: 200.0€           |
 |                                    |
 +====================================+
-|                 1                  |
+|                 75                 |
 |                                    |
 +------------------------------------+
-```  
-In the city _Napoli_ there is the number 1 so ...
-``` 
+```
+In the city _Bari_ there is the number 75 so ...
+```
 +------------------------------------+
 |    !!YOUR TICKET IS A WINNER!!     |
 +====================================+
-|           RUOTA Napoli             |
+|            RUOTA Tutte             |
 |    With ambata on the numbers:     |
-|                 1                  |
+|                 75                 |
 +====================================+
-``` 
-
-#### Example of loser ticket's design: 
-An example of a ticket will be presented below showing:   
-_Napoli_ (city), _ambata_ (bet) and a random number.
-
+```
+Since the payout is over 500€, applying the 8% tax, the net payout will be ...
 ```
 +------------------------------------+
-|        *_-_LOTTO TICKET_-_*        |
+|        GROSS WIN: 2246.00€         |
+|          NET WIN: 206.63€          |
 +====================================+
-|                                    |
-|            CITY: Napoli            |
-|                                    |
-|            BET: ambata             |
-|                                    |
-+====================================+
-|                10                  |
-|                                    |
-+------------------------------------+
-``` 
-In the city _Napoli_ there isn't the number 10 so ...
-``` 
-+------------------------------------+
-|  !!IT WILL BE FOR THE NEXT ONE!!   |
-+====================================+
-|    The ticket isn't winning...     |
-+====================================+
-``` 
+```  
 
 ### How to launch the program
 The entry point lotto_game.py script can be launched through command line by specifying the amount of tickets to generate for the n argument.  
@@ -97,4 +81,5 @@ It is characterized by the presence of files such as:
 - ***city.py*** : it represents the chosen city for a specific ticket;
 - ***prints.py*** : it prints the ticket taking into account the locations of cities, bets and numbers;
 - ***bills.py*** : it manages the logic of the program. It contains the lot class which takes into account the inputs and then enriches the ticket through the print file;
-- ***extraction.py***: it manages the 5 random numbers to be assigned to the cities and then prints the table of extractions, also considers the winning tickets.
+- ***extraction.py*** : it manages the 5 random numbers to be assigned to the cities and then prints the table of extractions, also considers the winning tickets;
+- ***prizes.py*** : it takes care of checking the total premium based on the data entered by the user.
