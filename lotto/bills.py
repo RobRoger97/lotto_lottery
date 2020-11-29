@@ -165,7 +165,7 @@ class Lotto(object):
             # Verify the winnings
             self.win_num = extr.is_winner(cit[t],num[t])
             # The number of numbers must be greater than the bet value
-            if len(self.win_num) >= int_b[t]:
+            if self.win_num != None and len(self.win_num) >= int_b[t]:
                     PrintTickets.horizontal_line()
                     PrintTickets.central("!!YOUR TICKET IS A WINNER!!")
                     PrintTickets.horizontal_under()
