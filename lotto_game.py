@@ -11,6 +11,7 @@ def main():
   tickets_num = args.n
 
   while True:
+   try:
     tickets_list = []
     # Case where zero entered --> exit
     if tickets_num == 0:
@@ -45,7 +46,17 @@ def main():
         tickets_num = int(input("- Yes ---> Enter a number between 1 and 5 \n" \
                    "-  No ---> Enter 0 to quit: \n"\
                    "Enter here: "))
-
+   # If a non-numeric value is entered                
+   except ValueError: 
+       PrintTickets.horizontal_line()
+       print("            !!ATTENTION!!\n           Enter a number!")
+       PrintTickets.horizontal_under()
+       print()
+       print("Please, try again...")
+       print()
+       tickets_num = int(input("- Yes ---> Enter a number between 1 and 5 \n" \
+                   "-  No ---> Enter 0 to quit: \n"\
+                   "Enter here: "))
 
     
 
