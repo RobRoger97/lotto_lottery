@@ -3,7 +3,9 @@
 ### Introduction
 In the second level, a table of the numbers drawn for each city is generated. 
 It is checked whether the ticket or tickets chosen are winning or not. 
-- a ticket results in ***winning*** when there is a least amount of matching numbers between the ticket's numbers and the numbers extracted in its city (for a bet on _Tutte_, namely all cities, the ticket's numbers will be checked against each city's extraction one by one). The least amount of matching numbers corresponds to the minumum amount of numbers to play for a specific bet type.
+
+#### When is the ticket winning?
+The ticket results in ***winning*** when there is a least amount of matching numbers between the ticket's numbers and the numbers extracted in its city (for a bet on _Tutte_, namely all cities, the ticket's numbers will be checked against each city's extraction one by one). The least amount of matching numbers corresponds to the minumum amount of numbers to play for a specific bet type.
 
 #### Example of table's design:
 The extraction's table shows the current date and 5 random numbers for each city.
