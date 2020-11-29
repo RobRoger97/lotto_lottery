@@ -12,7 +12,6 @@ def main():
 
   while True:
    try:
-    tickets_list = []
     # Case where zero entered --> exit
     if tickets_num == 0:
         PrintTickets.horizontal_line()
@@ -25,7 +24,7 @@ def main():
     elif tickets_num>=1 and tickets_num<=5:
         ticket = Lotto()
         ticket.ticket_amount = tickets_num
-        ticket.print_ticket(ticket,args.n)
+        ticket.print_ticket(ticket,tickets_num)
 
         print()
         PrintTickets.horizontal_line()
