@@ -4,6 +4,7 @@ from argparse import ArgumentParser
 from lotto.prints import PrintTickets
 
 def main():
+  # User enters the number of tickets from the command line
   arg_par = ArgumentParser(description="Lotto ticket generator")
   arg_par.add_argument("n", type = int, help="Number of ticket to generate", choices = [0, 1, 2, 3, 4, 5])
   args = arg_par.parse_args()
@@ -11,6 +12,7 @@ def main():
   tickets_num = args.n
 
   while True:
+   try:   
     tickets_list = []
     # Case where zero entered --> exit
     if tickets_num == 0:
@@ -24,7 +26,7 @@ def main():
     elif tickets_num>=1 and tickets_num<=5:
         ticket = Lotto()
         ticket.ticket_amount = tickets_num
-        ticket.print_ticket(ticket,args.n)
+        ticket.print_ticket(ticket,tickets_num)
 
         print()
         PrintTickets.horizontal_line()
@@ -45,7 +47,18 @@ def main():
         tickets_num = int(input("- Yes ---> Enter a number between 1 and 5 \n" \
                    "-  No ---> Enter 0 to quit: \n"\
                    "Enter here: "))
-
+   # If a non-numeric value is entered                
+   except ValueError: 
+       PrintTickets.horizontal_line()
+       print("            !!ATTENTION!!\n           Enter a number!")
+       PrintTickets.horizontal_under()
+       print()
+       print("Please, try again...")
+       print()
+       tickets_num = int(input("- Yes ---> Enter a number between 1 and 5 \n" \
+                   "-  No ---> Enter 0 to quit: \n"\
+                   "Enter here: "))
+       
 
     
 
