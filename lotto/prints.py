@@ -51,7 +51,7 @@ class PrintTickets(object):
         print('|')
 
     @staticmethod
-    def table(city,type_bill,numb):
+    def table(city,type_bill,numb,played):
         # String composed of the numbers extracted from 
         # the list and separated by a blank space
         string = " ".join([str(n) for n in numb])
@@ -62,8 +62,8 @@ class PrintTickets(object):
         # Body of ticket
         PrintTickets.empty_line()
         PrintTickets.central(f"CITY: {city}")
-        PrintTickets.empty_line()
         PrintTickets.central(f"BET: {type_bill}")
+        PrintTickets.central(f"AMOUNT: {str(played)}€")
         PrintTickets.empty_line()
         # Bottom of ticket
         PrintTickets.horizontal_under()
@@ -75,4 +75,4 @@ class PrintTickets(object):
 if __name__ == '__main__':
     lis = [10,28,39,45,54,63,72,80,90,28] # Example with max of number (10)
     test = PrintTickets()
-    test.table('Napoli','cinquina', lis)  
+    test.table('Napoli','cinquina', lis,1)  

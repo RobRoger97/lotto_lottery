@@ -77,3 +77,5 @@ class Extraction(object):
 if __name__ == '__main__':
     test = Extraction()
     test.print_extraction()
+    lis = test.is_winner('Tutte',[1])
+    print(lis)

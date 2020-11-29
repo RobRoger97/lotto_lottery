@@ -4,6 +4,7 @@ from lotto.city import City
 from lotto.type_of_bill import TypeBill
 from lotto.prints import PrintTickets
 from lotto.extraction import Extraction
+from lotto.prizes import Prize
 
 class Lotto(object):
 
@@ -15,12 +16,13 @@ class Lotto(object):
         - num  (list of random number)
         - ticket_amount (int)
     """
-    def __init__(self, city ='', bet ='',num =[], ticket_amount=0):
+    def __init__(self, city ='', bet ='',num =[], ticket_amount=0, play = '0'):
         self.city = city
         self.bet = bet
         self.num = num
         self.int_bet = 0
         self.win_num = []
+        self.play = play
         # Call the method that checks the validity of the ticket_amount
         if Lotto.is_ticket_amount_valid(ticket_amount):
             self.ticket_amount = ticket_amount
@@ -138,9 +140,9 @@ class Lotto(object):
     # requested by the user        
     @staticmethod
     def print_ticket(self,ticket_amount):
-        # Dictionary containing all cities, bet types and numbers 
+        # Dictionary containing all cities, bet types, numbers, int_bet and played  
         # entered by the user
-        dic = {'city' : [], 'bet' : [], 'num' : [], 'int_bet': []}
+        dic = {'city' : [], 'bet' : [], 'num' : [], 'int_bet': [], 'played': []}
         # Recall of methods for each ticket
         for t in range(ticket_amount):
             print()
@@ -153,6 +155,8 @@ class Lotto(object):
             dic['int_bet'].append(self.int_bet)
             Lotto.number_user(self)
             dic['num'].append(self.num)
+            Lotto.play_user(self)
+            dic['played'].append(self.play)
         extr = Extraction()
         extr.print_extraction()
         # Printing of individual tickets
@@ -161,11 +165,12 @@ class Lotto(object):
             type_bill = dic['bet']
             num = dic['num']
             int_b = dic['int_bet']
-            PrintTickets.table(cit[t],type_bill[t],num[t])
+            play_us = dic['played']
+            PrintTickets.table(cit[t],type_bill[t],num[t],play_us[t])
             # Verify the winnings
             self.win_num = extr.is_winner(cit[t],num[t])
             # The number of numbers must be greater than the bet value
-            if len(self.win_num) >= int_b[t]:
+            if self.win_num != None and len(self.win_num) >= int_b[t]:
                     PrintTickets.horizontal_line()
                     PrintTickets.central("!!YOUR TICKET IS A WINNER!!")
                     PrintTickets.horizontal_under()
@@ -175,8 +180,34 @@ class Lotto(object):
                     string = " ".join([str(y) for y in self.win_num])
                     PrintTickets.central(f"{string}")
                     PrintTickets.horizontal_under()
-                    
-            else:   # If the ticket is not winning
+                    # Calculation of the price to be dedicated to each ticket
+                    prizes = Prize()
+                    combination = prizes.calculate_comb(int_b[t],self.win_num)
+                    amount = prizes.calculate_amount(int_b[t],self.win_num)
+                    # 8% tax
+                    tax = 0.08
+                    # Payout calculation
+                    win = play_us[t]*combination*amount
+                    # If less than 500 it does not consider the tax
+                    if win <= 500:
+                        if cit[t] == "Tutte": # If "Tutte" the payout is divided by 10
+                            win/=10
+                        PrintTickets.horizontal_line()
+                        PrintTickets.central("TOTAL WIN: {:.2f}€".format(win))
+                        PrintTickets.horizontal_under()
+                    # If greater than 500, gross and net must be considered
+                    else:
+                        net_win = win-(win*tax)
+                        if win > 6000000:
+                            net_win = 6000000 # For each ticket the maximum profit is 6,000,000
+                        if cit[t] == "Tutte":
+                            net_win/=10
+                        PrintTickets.horizontal_line()
+                        PrintTickets.central("GROSS WIN: {:.2f}€".format(win))
+                        PrintTickets.central("NET WIN: {:.2f}€".format(net_win))
+                        PrintTickets.horizontal_under()
+            # If the ticket is not winning
+            else:   
                     PrintTickets.horizontal_line()
                     PrintTickets.central("!!IT WILL BE FOR THE NEXT ONE!!")
                     PrintTickets.horizontal_under()
@@ -184,6 +215,28 @@ class Lotto(object):
                     PrintTickets.horizontal_under()
                     pass
 
+    # This method asks how much to bet                      
+    def play_user(self):
+        PrintTickets.horizontal_line()
+        PrintTickets.central("Enter an amount between 1€ and 200€")
+        PrintTickets.horizontal_under()
+        # Loop which also handles errors
+        while True:
+            played = input("How much do you want to play on the ticket?: ")
+            if played.isdigit():
+                play_float = float(played)
+                if play_float >= 1 and play_float <= 200:
+                    self.play = play_float
+                    break
+                else: 
+                    print("!!Enter an amount between 1€ and 200€!!")
+                    print("Please, try again...")
+                    print()
+            
+            else:
+                print("!!Enter a numeric value!!")
+                print("Please, try again...")
+                print()
    
 if __name__ == '__main__':
     ex = Lotto()
