@@ -13,7 +13,6 @@ def main():
 
   while True:
    try:   
-    tickets_list = []
     # Case where zero entered --> exit
     if tickets_num == 0:
         PrintTickets.horizontal_line()
