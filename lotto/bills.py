@@ -168,7 +168,7 @@ class Lotto(object):
             play_us = dic['played']
             PrintTickets.table(cit[t],type_bill[t],num[t],play_us[t])
             # Verify the winnings
-            self.win_num = extr.is_winner(cit[t],num[t])
+            self.win_num = extr.win(cit[t],num[t])
             # The number of numbers must be greater than the bet value
             if self.win_num != None and len(self.win_num) >= int_b[t]:
                     PrintTickets.horizontal_line()

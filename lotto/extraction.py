@@ -42,7 +42,7 @@ class Extraction(object):
     def print_extraction(self):
         PrintExtraction.extraction_table(self.cities_numbers)
     # Method that displays if the ticket is winning
-    def is_winner(self, city, numbers):
+    def win(self, city, numbers):
         win_num = []
         for key,value in self.cities_numbers.items():
             if city == key:
@@ -77,5 +77,5 @@ class Extraction(object):
 if __name__ == '__main__':
     test = Extraction()
     test.print_extraction()
-    lis = test.is_winner('Tutte',[1])
+    lis = test.win('Tutte',[1])
     print(lis)
