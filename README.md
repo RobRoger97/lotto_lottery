@@ -36,10 +36,10 @@ After launching the script, the program will start constructing each ticket by a
 The project is structured in a ***lotto_game.py*** file accompanied by a lotto package.
 #### lotto package:
 It is characterized by the presence of files such as:
-- ***bet.py***           : it contains the "TypeBill" class which represents the chosen bet for a specific ticket;
-- ***city.py***          : it contains the "City" class which represents the chosen city for a specific ticket;
+- ***bet.py***           : it contains the _"TypeBill"_ class which represents the chosen bet for a specific ticket;
+- ***city.py***          : it contains the _"City"_ class which represents the chosen city for a specific ticket;
 - ***input.py***         : it manages the inputs entered by the user;
 - ***print***            : it manages screen printouts;
-- ***ticket***           : it contains the Ticket class which is the ticket itself;
+- ***ticket***           : it contains the _"Ticket"_ class which is the ticket itself;
 - ***print_tickets.py*** : it prints the ticket taking into account the locations of cities, bets and numbers;
-- ***lotto.py***         : it manages the logic of the program. It contains the "Lotto" class which acts as a "bridge" between the various files created.
+- ***lotto.py***         : it manages the logic of the program. It contains the _"Lotto"_ class which acts as a **"bridge"** between the various files created.
