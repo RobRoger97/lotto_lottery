@@ -1,3 +1,5 @@
+from lotto.print import Print
+
 class TypeBill(object):
     """
         Represent the type of bill
@@ -34,10 +36,10 @@ class TypeBill(object):
             return True
         
         else:
-            print()
-            print("         !!ATTENTION!!")
-            print("The type entered is not VALID!")
-            print()
+            Print.horizontal_2line()
+            Print.central("!!ATTENTION!!")
+            Print.central("The type entered is not VALID!")
+            Print.horizontal_2line()
             return False
 
 # Example to confirm what was written
