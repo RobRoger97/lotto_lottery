@@ -1,3 +1,5 @@
+from lotto.print import Print
+
 class City(object):
     """
         Represent the city (aka 'ruota') of bill
@@ -37,10 +39,10 @@ class City(object):
         if city in City.cities_list:
             return True
         else:
-            print()
-            print("         !!ATTENTION!!")
-            print("The city entered is not VALID!")
-            print()
+            Print.horizontal_2line()
+            Print.central("!!ATTENTION!!")
+            Print.central("The city entered is not VALID!")
+            Print.horizontal_2line()
             return False
 
 # Example to confirm what was written
