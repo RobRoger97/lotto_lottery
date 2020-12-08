@@ -7,7 +7,7 @@ from lotto.print import Print
 
 class Input(object):
     """
-        Rappresenta gli input del gioco
+        Represents the game inputs
     """
     def __init__(self, city ='', bet ='',num =[]):
         self.city = city
