@@ -39,7 +39,7 @@ It is characterized by the presence of files such as:
 - ***bet.py***           : it contains the _"TypeBill"_ class which represents the chosen bet for a specific ticket;
 - ***city.py***          : it contains the _"City"_ class which represents the chosen city for a specific ticket;
 - ***input.py***         : it manages the inputs entered by the user;
-- ***print***            : it manages screen printouts;
-- ***ticket***           : it contains the _"Ticket"_ class which is the ticket itself;
+- ***print.py***            : it manages screen printouts;
+- ***ticket.py***           : it contains the _"Ticket"_ class which is the ticket itself;
 - ***print_tickets.py*** : it prints the ticket taking into account the locations of cities, bets and numbers;
 - ***lotto.py***         : it manages the logic of the program. It contains the _"Lotto"_ class which acts as a **"bridge"** between the various files created.
