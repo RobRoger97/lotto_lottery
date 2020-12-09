@@ -1,8 +1,8 @@
-from random import randrange
+from random import sample
 from time import strftime
 # Call the classes from the files
 from lotto.city import City
-from lotto.prints import PrintTickets
+from lotto.print import Print
 
 # Go to specify the printing of the lottery 
 # drawings of 5 numbers for each city
@@ -15,19 +15,19 @@ class PrintExtraction(object):
         txt = "*_-_L O T T O_-_*"
         # Current date of the draw
         current_date = strftime("%d/%m/%Y")
-        PrintTickets.horizontal_line()
-        PrintTickets.central(txt)
-        PrintTickets.horizontal_under()
-        PrintTickets.central("EXTRACTION OF:")
-        PrintTickets.central(current_date)
-        PrintTickets.horizontal_under()
+        Print.horizontal_line()
+        Print.central(txt)
+        Print.horizontal_2line()
+        Print.central("EXTRACTION OF:")
+        Print.central(current_date)
+        Print.horizontal_2line()
         # Loop that describes the assignment of the 5 numbers 
         # to the single cities
         for name_city,num_rand in extraction.items():
             number = ["%02d" % x for x in num_rand]
-            print("  ", name_city," "*(15-len(name_city))," ".join(number))
+            print("  "*3, name_city," "*(20-len(name_city))," ".join(number))
 
-        PrintTickets.horizontal_line()
+        Print.horizontal_line()
 
 class Extraction(object):
     """
@@ -40,39 +40,13 @@ class Extraction(object):
         self.cities_numbers = cities_numbers
     # Method that prints the table containing the results of the extraction
     def print_extraction(self):
+        next_step = Print.next_step(Print)
         PrintExtraction.extraction_table(self.cities_numbers)
-    # Method that displays if the ticket is winning
-    def is_winner(self, city, numbers):
-        win_num = []
-        for key,value in self.cities_numbers.items():
-            if city == key:
-                for n in numbers:
-                    if n in value:
-                        win_num.append(n)
-                        return win_num
-            # Special case in which the user enters "Tutte"
-            elif city == "Tutte":
-                for n in numbers:
-                    if n in value:
-                        win_num.append(n)
-                        return win_num
-            else:
-                pass
             
     # Method that calculates the 5 random numbers            
     @staticmethod
     def random_numbers():
-        num_list = []
-        for n in range(5):
-            num = randrange(1,90+1)
-
-            while True:
-                if num in num_list: # If the number exists, repeat..
-                    num = randrange(1,90+1)
-                else:
-                    break
-            num_list.append(num)
-        return num_list
+        return sample(list(range(1,90+1)),5)
 
 if __name__ == '__main__':
     test = Extraction()
